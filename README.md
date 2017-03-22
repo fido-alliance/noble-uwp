@@ -16,7 +16,7 @@ functionality in Windows 10.
  * Windows 10 SDK build 10.0.15021 or later, available from the
    [Windows Insider Preview SDK page](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
    * Note the SDK build number changes frequently during the preview phase.
-     You may need to update the SDK references in `noble-uwp/uwp/*/binding.gyp` to refer
+     You may need to update the `WIN_SDK_VER` variable in `common.gypi` to refer
      to the SDK build number that is installed. Try to use an SDK build that matches your
      Windows 10 preview build.
 
@@ -65,7 +65,7 @@ The following functionality is working:
  * Service characteristics discovery
  * Characteristic reading and writing
  * Characteristic change notifications
+ * Descriptors (discovering, reading, writing)
 
 The following functionality is not yet implemented:
- * Descriptors (discovering, reading, writing)
  * Broadcast
