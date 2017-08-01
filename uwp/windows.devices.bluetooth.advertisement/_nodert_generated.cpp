@@ -2672,31 +2672,23 @@ namespace NodeRT { namespace Windows { namespace Devices { namespace Bluetooth {
             ref new ::Windows::Foundation::TypedEventHandler<::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher^, ::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs^>(
             [callbackObjPtr](::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher^ arg0, ::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs^ arg1) {
               NodeUtils::Async::RunOnMain([callbackObjPtr , arg0, arg1]() {
-           	    HandleScope scope;
-                TryCatch tryCatch;
-              
-                Local<Value> error;
+                HandleScope scope;
 
-                Local<Value> wrappedArg0 = WrapBluetoothLEAdvertisementWatcher(arg0);
-                Local<Value> wrappedArg1 = WrapBluetoothLEAdvertisementReceivedEventArgs(arg1);
 
-                if (tryCatch.HasCaught())
+                Local<Value> wrappedArg0;
+                Local<Value> wrappedArg1;
+
                 {
-                  error = Nan::To<Object>(tryCatch.Exception()).ToLocalChecked();
+                  TryCatch tryCatch;
+
+
+                  wrappedArg0 = WrapBluetoothLEAdvertisementWatcher(arg0);
+                  wrappedArg1 = WrapBluetoothLEAdvertisementReceivedEventArgs(arg1);
+
+
+                  if (wrappedArg0.IsEmpty()) wrappedArg0 = Undefined();
+                  if (wrappedArg1.IsEmpty()) wrappedArg1 = Undefined();
                 }
-                else 
-                {
-                  error = Undefined();
-                }
-
-				// TODO: this is ugly! Needed due to the possibility of expception occuring inside object convertors
-				// can be fixed by wrapping the conversion code in a function and calling it on the fly
-				// we must clear the try catch block here so the invoked inner method exception won't get swollen (issue #52) 
-				tryCatch.~TryCatch();
-
-
-                if (wrappedArg0.IsEmpty()) wrappedArg0 = Undefined();
-                if (wrappedArg1.IsEmpty()) wrappedArg1 = Undefined();
 
                 Local<Value> args[] = { wrappedArg0, wrappedArg1 };
                 Local<Object> callbackObjLocalRef = Nan::New<Object>(*callbackObjPtr);
@@ -2737,31 +2729,23 @@ namespace NodeRT { namespace Windows { namespace Devices { namespace Bluetooth {
             ref new ::Windows::Foundation::TypedEventHandler<::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher^, ::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs^>(
             [callbackObjPtr](::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher^ arg0, ::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs^ arg1) {
               NodeUtils::Async::RunOnMain([callbackObjPtr , arg0, arg1]() {
-           	    HandleScope scope;
-                TryCatch tryCatch;
-              
-                Local<Value> error;
+                HandleScope scope;
 
-                Local<Value> wrappedArg0 = WrapBluetoothLEAdvertisementWatcher(arg0);
-                Local<Value> wrappedArg1 = WrapBluetoothLEAdvertisementWatcherStoppedEventArgs(arg1);
 
-                if (tryCatch.HasCaught())
+                Local<Value> wrappedArg0;
+                Local<Value> wrappedArg1;
+
                 {
-                  error = Nan::To<Object>(tryCatch.Exception()).ToLocalChecked();
+                  TryCatch tryCatch;
+
+
+                  wrappedArg0 = WrapBluetoothLEAdvertisementWatcher(arg0);
+                  wrappedArg1 = WrapBluetoothLEAdvertisementWatcherStoppedEventArgs(arg1);
+
+
+                  if (wrappedArg0.IsEmpty()) wrappedArg0 = Undefined();
+                  if (wrappedArg1.IsEmpty()) wrappedArg1 = Undefined();
                 }
-                else 
-                {
-                  error = Undefined();
-                }
-
-				// TODO: this is ugly! Needed due to the possibility of expception occuring inside object convertors
-				// can be fixed by wrapping the conversion code in a function and calling it on the fly
-				// we must clear the try catch block here so the invoked inner method exception won't get swollen (issue #52) 
-				tryCatch.~TryCatch();
-
-
-                if (wrappedArg0.IsEmpty()) wrappedArg0 = Undefined();
-                if (wrappedArg1.IsEmpty()) wrappedArg1 = Undefined();
 
                 Local<Value> args[] = { wrappedArg0, wrappedArg1 };
                 Local<Object> callbackObjLocalRef = Nan::New<Object>(*callbackObjPtr);
@@ -2812,7 +2796,7 @@ namespace NodeRT { namespace Windows { namespace Devices { namespace Bluetooth {
       String::Value eventName(info[0]);
       auto str = *eventName;
 
-      if ((NodeRT::Utils::CaseInsenstiveEquals(L"received", str)) &&(NodeRT::Utils::CaseInsenstiveEquals(L"stopped", str)))
+      if ((!NodeRT::Utils::CaseInsenstiveEquals(L"received", str)) &&(!NodeRT::Utils::CaseInsenstiveEquals(L"stopped", str)))
       {
         Nan::ThrowError(Nan::Error(String::Concat(NodeRT::Utils::NewString(L"given event name isn't supported: "), info[0].As<String>())));
         return;
@@ -4306,31 +4290,23 @@ namespace NodeRT { namespace Windows { namespace Devices { namespace Bluetooth {
             ref new ::Windows::Foundation::TypedEventHandler<::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher^, ::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs^>(
             [callbackObjPtr](::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher^ arg0, ::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs^ arg1) {
               NodeUtils::Async::RunOnMain([callbackObjPtr , arg0, arg1]() {
-           	    HandleScope scope;
-                TryCatch tryCatch;
-              
-                Local<Value> error;
+                HandleScope scope;
 
-                Local<Value> wrappedArg0 = WrapBluetoothLEAdvertisementPublisher(arg0);
-                Local<Value> wrappedArg1 = WrapBluetoothLEAdvertisementPublisherStatusChangedEventArgs(arg1);
 
-                if (tryCatch.HasCaught())
+                Local<Value> wrappedArg0;
+                Local<Value> wrappedArg1;
+
                 {
-                  error = Nan::To<Object>(tryCatch.Exception()).ToLocalChecked();
+                  TryCatch tryCatch;
+
+
+                  wrappedArg0 = WrapBluetoothLEAdvertisementPublisher(arg0);
+                  wrappedArg1 = WrapBluetoothLEAdvertisementPublisherStatusChangedEventArgs(arg1);
+
+
+                  if (wrappedArg0.IsEmpty()) wrappedArg0 = Undefined();
+                  if (wrappedArg1.IsEmpty()) wrappedArg1 = Undefined();
                 }
-                else 
-                {
-                  error = Undefined();
-                }
-
-				// TODO: this is ugly! Needed due to the possibility of expception occuring inside object convertors
-				// can be fixed by wrapping the conversion code in a function and calling it on the fly
-				// we must clear the try catch block here so the invoked inner method exception won't get swollen (issue #52) 
-				tryCatch.~TryCatch();
-
-
-                if (wrappedArg0.IsEmpty()) wrappedArg0 = Undefined();
-                if (wrappedArg1.IsEmpty()) wrappedArg1 = Undefined();
 
                 Local<Value> args[] = { wrappedArg0, wrappedArg1 };
                 Local<Object> callbackObjLocalRef = Nan::New<Object>(*callbackObjPtr);
@@ -4381,7 +4357,7 @@ namespace NodeRT { namespace Windows { namespace Devices { namespace Bluetooth {
       String::Value eventName(info[0]);
       auto str = *eventName;
 
-      if ((NodeRT::Utils::CaseInsenstiveEquals(L"statusChanged", str)))
+      if ((!NodeRT::Utils::CaseInsenstiveEquals(L"statusChanged", str)))
       {
         Nan::ThrowError(Nan::Error(String::Concat(NodeRT::Utils::NewString(L"given event name isn't supported: "), info[0].As<String>())));
         return;
