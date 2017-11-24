@@ -16,7 +16,7 @@ try {
   if (fs.existsSync(path.join(__dirname, 'NodeRT_Windows_Devices_Radios.d.js)'))) {
     module.exports = require('./NodeRT_Windows_Devices_Radios.d.js');
   }
-  module.exports = require(require('node-pre-gyp').find(
+  module.exports = require(require('node-pre-gyp-prod').find(
       path.resolve(path.join(__dirname,'../package.json'))));
 }
 catch(e) {
