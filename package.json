@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jasongin/noble-uwp.git"
+		"url": "git+https://github.com/farfromrefuge/noble-uwp.git"
 	},
 	"keywords": [
 		"bluetooth",
@@ -17,13 +17,13 @@
 	"author": "jasongin <jasongin@microsoft.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/jasongin/noble-uwp/issues"
+		"url": "https://github.com/farfromrefuge/noble-uwp/issues"
 	},
-	"homepage": "https://github.com/jasongin/noble-uwp#readme",
+	"homepage": "https://github.com/farfromrefuge/noble-uwp#readme",
 	"dependencies": {
+		"node-pre-gyp-prod": "1.0.3",
 		"debug": "^2.6.0",
-		"noble": "^1.7.0",
-		"bth-connectable": "TheSufferfest/bth-connectable"
+		"noble": "^1.8.1"
 	},
 	"bundledDependencies": [
 		"node-pre-gyp"
