@@ -21,10 +21,10 @@
 	},
 	"homepage": "https://github.com/farfromrefuge/noble-uwp#readme",
 	"dependencies": {
-		"node-pre-gyp-prod": "1.0.3",
+		"bth-connectable": "git+https://github.com/TheSufferfest/bth-connectable.git",
 		"debug": "^2.6.0",
 		"noble": "^1.8.1",
-		"bth-connectable": "https://github.com/TheSufferfest/bth-connectable"
+		"node-pre-gyp-prod": "1.0.3"
 	},
 	"bundledDependencies": [
 		"node-pre-gyp"
